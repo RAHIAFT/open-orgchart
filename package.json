@@ -1,0 +1,15 @@
+{
+  "name": "open-orgchart",
+  "private": true,
+  "description": "An organisation chart that runs on its own: a lightweight, secure service and a chart component.",
+  "license": "Apache-2.0",
+  "repository": { "type": "git", "url": "git+https://github.com/RAHIAFT/open-orgchart.git" },
+  "workspaces": ["packages/*"],
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "build": "npm run build -w @open-orgchart/chart && node scripts/build-viewer.mjs",
+    "test": "npm test --workspaces --if-present",
+    "start": "node packages/server/src/cli.js serve",
+    "demo": "node packages/server/src/cli.js demo"
+  }
+}

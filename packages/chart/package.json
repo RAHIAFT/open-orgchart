@@ -1,0 +1,43 @@
+{
+  "name": "@open-orgchart/chart",
+  "version": "0.1.0",
+  "description": "An organisation chart for React: the structure, the positions and the people of one organisation - moved, zoomed, folded, searched, styled, and exported as PNG, SVG or PDF. English and Persian, left to right and right to left.",
+  "license": "Apache-2.0",
+  "author": "Rahiaft",
+  "homepage": "https://github.com/RAHIAFT/open-orgchart/tree/main/packages/chart",
+  "repository": { "type": "git", "url": "git+https://github.com/RAHIAFT/open-orgchart.git", "directory": "packages/chart" },
+  "bugs": "https://github.com/RAHIAFT/open-orgchart/issues",
+  "keywords": ["org chart", "organisation chart", "organization chart", "orgchart", "react", "hierarchy", "tree", "rtl"],
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./core": "./dist/core.js",
+    "./style.css": "./dist/style.css",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "src", "README.md", "LICENSE", "NOTICE"],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "esbuild": "^0.25.0",
+    "jsdom": "^26.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vitest": "^3.2.4"
+  }
+}

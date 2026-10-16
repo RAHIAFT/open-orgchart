@@ -1,0 +1,10 @@
+node_modules/
+dist/
+data/
+*.db
+*.db-*
+coverage/
+packages/server/public/
+packages/*/LICENSE
+packages/*/NOTICE
+.DS_Store
