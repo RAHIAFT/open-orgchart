@@ -7,9 +7,9 @@
   "workspaces": ["packages/*"],
   "engines": { "node": ">=22.13" },
   "scripts": {
-    "build": "npm run build -w @open-orgchart/chart && node scripts/build-viewer.mjs",
+    "build": "npm run build -w @open-orgchart/chart && node --disable-warning=ExperimentalWarning scripts/build-viewer.mjs",
     "test": "npm test --workspaces --if-present",
-    "start": "node packages/server/src/cli.js serve",
-    "demo": "node packages/server/src/cli.js demo"
+    "start": "node --disable-warning=ExperimentalWarning packages/server/src/cli.js serve",
+    "demo": "node --disable-warning=ExperimentalWarning packages/server/src/cli.js demo"
   }
 }

@@ -15,9 +15,8 @@ anywhere, and the SVG is fully self-contained. It reads right to left as well as
 
 ## Install
 
-```sh
-npm install @open-orgchart/chart react react-dom
-```
+Not on npm yet. Build it from the repository (`npm ci && npm run build` at its root) and use `packages/chart/dist`,
+or bring `packages/chart` into your own workspace. It needs `react` and `react-dom` (18 or newer).
 
 ## Use
 

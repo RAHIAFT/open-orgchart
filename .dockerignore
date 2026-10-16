@@ -1,0 +1,10 @@
+node_modules
+**/node_modules
+**/dist
+packages/server/public
+data
+*.db
+*.db-*
+.git
+.github
+coverage

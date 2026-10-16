@@ -1,0 +1,26 @@
+{
+  "name": "@open-orgchart/server",
+  "version": "0.1.0",
+  "description": "An organisation chart service that runs on its own: departments, positions, who holds them and who answers to whom, as of any day - for people, applications (by their sign-in token) and systems (by key), each told only what is shared with it. Node.js, no dependencies, one SQLite file.",
+  "license": "Apache-2.0",
+  "author": "Rahiaft",
+  "homepage": "https://github.com/RAHIAFT/open-orgchart",
+  "repository": { "type": "git", "url": "git+https://github.com/RAHIAFT/open-orgchart.git", "directory": "packages/server" },
+  "bugs": "https://github.com/RAHIAFT/open-orgchart/issues",
+  "keywords": ["org chart", "organisation", "organization", "hierarchy", "manager", "reporting line", "oidc", "authentik", "keycloak", "directory"],
+  "type": "module",
+  "main": "./src/server.js",
+  "exports": {
+    ".": "./src/server.js",
+    "./config": "./src/config.js",
+    "./package.json": "./package.json"
+  },
+  "bin": { "open-orgchart": "./src/cli.js" },
+  "files": ["src", "public", "README.md", "LICENSE", "NOTICE"],
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/cli.js serve",
+    "demo": "node --disable-warning=ExperimentalWarning src/cli.js demo",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/**/*.test.js\""
+  }
+}

@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: Apache-2.0
+# docker compose up -d   ->   http://localhost:8080
+# The first keeper key is written to the data volume (first-keeper-key.txt) - or give your own in ORG_KEEPER_KEY.
+services:
+  orgchart:
+    build: .
+    image: open-orgchart:local
+    ports:
+      - "8080:8080"
+    environment:
+      ORG_TZ: "UTC"
+      # Put it behind your TLS proxy, then:
+      # ORG_TRUST_PROXY: "1"
+      # ORG_HSTS: "1"
+      # Let your own web apps ask from a browser:
+      # ORG_CORS_ORIGINS: "https://intranet.example.com"
+      # Accept your sign-in service's tokens (OpenID Connect: Authentik, Keycloak, Entra ID, ...):
+      # ORG_OIDC_ISSUER: "https://auth.example.com/application/o/orgchart/"
+      # ORG_OIDC_MEMBER_CLIENTS: "orgchart"
+      # ORG_OIDC_KEEPER_GROUP: "org-keepers"
+    volumes:
+      - orgchart-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  orgchart-data:
